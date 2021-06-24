@@ -9,6 +9,6 @@ if (debug_mode) {
 	
 	for (var index = 0; index < array_length(keys); index += 1) {
 		var keyName = keys[index];
-		draw_text(16, 16 * index, keyName + ": " + string(variable_struct_get(keyConfig, keyName)));
+		draw_text(16, 16 * index + 1, keyName + ": " + string(variable_struct_get(keyConfig, keyName)));
 	}
 }

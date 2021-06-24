@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Draw screen
 
 switch (screen) {
 	case ScreenState.MainMenu: {
@@ -14,16 +14,33 @@ switch (screen) {
 	}
 	
 	case ScreenState.Game: {
+		// 떨어지는 테트리미노
+		for (var i = 0; i < 4; i += 1) {
+			var tetriminoData = variable_struct_get(tetrimino, currentTetrimino);
+			var tetriminoPattern = tetriminoData.pattern[currentRoll];
+			var tetriminoOffset = tetriminoData.offset;
+			
+			var tetriminoX = ds_grid_value_x(tetriminoPattern, 0, 0, tetriminoOffset * 2, tetriminoOffset * 2, i + 1) + currentX - tetriminoOffset;
+			var tetriminoY = ds_grid_value_y(tetriminoPattern, 0, 0, tetriminoOffset * 2, tetriminoOffset * 2, i + 1) + currentY - tetriminoOffset;
+			
+			var drawX = 8 + (tetriminoWidth + margin) * tetriminoX;
+			var drawY = 8 + (tetriminoHeight + margin) * tetriminoY;
+			
+			draw_sprite_ext(sprTetrimino, 0, drawX, drawY, 1, 1, 0, tetriminoData.tintColor, 1);		
+		}
+				
+		// 배경 화면
 		for (var w = 0; w < WIDTH; w += 1) {
 			for (var h = 0; h < HEIGHT; h += 1) {
-				var viewX = 8 + (minoWidth + margin) * w;
-				var viewY = 8 + (minoHeight + margin) * h;
+				var drawX = 8 + (tetriminoWidth + margin) * w;
+				var drawY = 8 + (tetriminoHeight + margin) * h;
 				var item = ds_grid_get(field, w, h);
 				
-				draw_rectangle_color(viewX, viewY, viewX + minoWidth - 1, viewY + minoHeight - 1, BLACK, BLACK, BLACK, BLACK, true);
-			
+				draw_rectangle_color(drawX, drawY, drawX + tetriminoWidth - 1, drawY + tetriminoHeight - 1, BLACK, BLACK, BLACK, BLACK, true);
+				
+				// 공간에 테트리미노 있으면
 				if (item) {
-					draw_sprite(viewX, viewY, 0, minoSprite);
+					draw_sprite(drawX, drawY, 0, tetriminoSprite);
 				}
 			}
 		}
