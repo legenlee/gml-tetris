@@ -1,5 +1,5 @@
-#macro WIDTH		20
-#macro HEIGHT		10
+#macro WIDTH		10
+#macro HEIGHT		20
 
 #macro CYAN		$ffff00
 #macro YELLOW	$00ffff
@@ -9,3 +9,4 @@
 #macro BLUE		$ff0000
 #macro ORANGE	$007fff
 #macro GRAY		$7f7f7f
+#macro BLACK	$000000

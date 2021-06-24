@@ -11,6 +11,12 @@ screen = ScreenState.MainMenu;
 queue = noone;
 field = noone;
 
+margin = 2;
+
+minoSprite = sprMino;
+minoWidth = sprite_get_width(minoSprite);
+minoHeight = sprite_get_height(minoSprite);
+
 horizontalKey = 0;
 horizontalKeyPressed = 0;
 verticalKey = 0;

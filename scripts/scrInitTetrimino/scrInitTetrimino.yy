@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrInitMino",
+  "name": "scrInitTetrimino",
   "tags": [],
   "resourceType": "GMScript",
 }
