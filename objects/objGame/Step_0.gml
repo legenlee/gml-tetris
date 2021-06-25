@@ -14,16 +14,33 @@ switch (screen) {
 	}
 	
 	case ScreenState.Game: {
+		fallCooldown -= 1;
+		
+		if (!scrPlaceTetrimino(currentX, currentY + 1, currentRotate) && fallCooldown <= 0) {
+			fallCooldown = game_get_speed(gamespeed_fps) / g;
+			currentY += 1;
+		}
+		
 		if (currentY == scrGetHardDropY()) {
-			if (life > 0) {
-				life -= 1;
+			if (dropCooldown > 0) {
+				dropCooldown -= 1;
 			} else {
 				scrDropTetrimino();
 			}
+		} else {
+			dropCooldown = maxDropCooldown;
 		}
 		
-		if (!scrPlaceTetrimino(currentX + horizontalKeyPressed, currentY)) {
+		if (!scrPlaceTetrimino(currentX + horizontalKeyPressed, currentY, currentRotate)) {
 			currentX += horizontalKeyPressed;
+		}
+		
+		if (rotateLeftKeyPressed) {
+			scrSRSRotateLeft();
+		}
+		
+		if (rotateRightKeyPressed) {
+			scrSRSRotateRight();
 		}
 		
 		if (hardDropKeyPressed) {

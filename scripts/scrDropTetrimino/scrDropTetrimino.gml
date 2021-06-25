@@ -1,6 +1,6 @@
 function scrDropTetrimino() {
 	var tetriminoData = variable_struct_get(tetrimino, currentTetrimino);
-	var tetriminoPattern = tetriminoData.pattern[currentRoll];
+	var tetriminoPattern = tetriminoData.pattern[currentRotate];
 	var tetriminoOffset = tetriminoData.offset;
 	
 	var gridWidth = ds_grid_width(tetriminoPattern) - 1;
@@ -18,6 +18,7 @@ function scrDropTetrimino() {
 	currentTetrimino = scrPickTetrimino();
 	currentX = 4;
 	currentY = 1;
-	currentRoll = 0;
-	life = maxLife;
+	currentRotate = 0;
+	dropCooldown = maxDropCooldown;
+	fallCooldown = game_get_speed(gamespeed_fps) / g;
 }

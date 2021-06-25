@@ -20,6 +20,7 @@ tetriminoWidth = sprite_get_width(tetriminoSprite);
 tetriminoHeight = sprite_get_height(tetriminoSprite);
 
 scrInitTetrimino();
+scrInitSRSTable();
 
 horizontalKey = 0;
 horizontalKeyPressed = 0;
@@ -31,15 +32,17 @@ softDropKeyPressed = 0;
 hardDropKeyPressed = 0;
 holdKeyPressed = 0;
 
-g = 0;
+g = 1;
 
 hold = true;
 holdTetrimino = noone;
 
 currentTetrimino = noone;
-currentRoll = 0;
+currentRotate = 0;
 currentX = 4;
 currentY = 1;
 
-maxLife = game_get_speed(gamespeed_fps) * 1.5;
-life = maxLife;
+maxDropCooldown = game_get_speed(gamespeed_fps) * 1.5;
+dropCooldown = maxDropCooldown;
+
+fallCooldown = game_get_speed(gamespeed_fps) / 1;

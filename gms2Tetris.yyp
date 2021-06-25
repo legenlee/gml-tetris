@@ -1,7 +1,8 @@
 {
   "resources": [
     {"id":{"name":"scrInitSRSTable","path":"scripts/scrInitSRSTable/scrInitSRSTable.yy",},"order":0,},
-    {"id":{"name":"scrSRSRollRight","path":"scripts/scrSRSRollRight/scrSRSRollRight.yy",},"order":1,},
+    {"id":{"name":"scrSRSRotateRight","path":"scripts/scrSRSRotateRight/scrSRSRotateRight.yy",},"order":1,},
+    {"id":{"name":"scrTetrisLine","path":"scripts/scrTetrisLine/scrTetrisLine.yy",},"order":7,},
     {"id":{"name":"objGame","path":"objects/objGame/objGame.yy",},"order":0,},
     {"id":{"name":"sprTetrimino","path":"sprites/sprTetrimino/sprTetrimino.yy",},"order":0,},
     {"id":{"name":"objInput","path":"objects/objInput/objInput.yy",},"order":1,},
@@ -11,7 +12,7 @@
     {"id":{"name":"fntDOSGothic","path":"fonts/fntDOSGothic/fntDOSGothic.yy",},"order":0,},
     {"id":{"name":"scrInitTetrimino","path":"scripts/scrInitTetrimino/scrInitTetrimino.yy",},"order":2,},
     {"id":{"name":"scrDropTetrimino","path":"scripts/scrDropTetrimino/scrDropTetrimino.yy",},"order":6,},
-    {"id":{"name":"scrSRSRollLeft","path":"scripts/scrSRSRollLeft/scrSRSRollLeft.yy",},"order":2,},
+    {"id":{"name":"scrSRSRotateLeft","path":"scripts/scrSRSRotateLeft/scrSRSRotateLeft.yy",},"order":2,},
     {"id":{"name":"sprContainer","path":"sprites/sprContainer/sprContainer.yy",},"order":1,},
     {"id":{"name":"scrPlaceTetrimino","path":"scripts/scrPlaceTetrimino/scrPlaceTetrimino.yy",},"order":4,},
     {"id":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},"order":0,},

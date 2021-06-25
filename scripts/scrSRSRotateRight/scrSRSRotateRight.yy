@@ -6,7 +6,7 @@
     "path": "folders/Scripts/SRS.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrSRSRollRight",
+  "name": "scrSRSRotateRight",
   "tags": [],
   "resourceType": "GMScript",
 }

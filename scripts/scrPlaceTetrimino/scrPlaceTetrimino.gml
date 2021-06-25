@@ -1,13 +1,12 @@
-/// @description scrPlaceTetrimino(x, y)
+/// @description scrPlaceTetrimino(x, y, rotate)
 /// @param x
 /// @param y
-/// @param key
-/// @param roll
+/// @param rotate
 
-function scrPlaceTetrimino(x, y) {
+function scrPlaceTetrimino(x, y, rotate) {
 	var tetriminoData = variable_struct_get(tetrimino, currentTetrimino);
 	var tetriminoOffset = tetriminoData.offset;
-	var tetriminoPattern = tetriminoData.pattern[currentRoll];
+	var tetriminoPattern = tetriminoData.pattern[rotate];
 	
 	var gridWidth = ds_grid_width(tetriminoPattern) - 1;
 	var gridHeight = ds_grid_height(tetriminoPattern) - 1;

@@ -15,7 +15,7 @@ switch (screen) {
 	
 	case ScreenState.Game: {
 		var tetriminoData = variable_struct_get(tetrimino, currentTetrimino);
-		var tetriminoPattern = tetriminoData.pattern[currentRoll];
+		var tetriminoPattern = tetriminoData.pattern[currentRotate];
 		var tetriminoOffset = tetriminoData.offset;
 		
 		var gridWidth = ds_grid_width(tetriminoPattern) - 1;
