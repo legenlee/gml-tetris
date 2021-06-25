@@ -40,3 +40,6 @@ currentTetrimino = noone;
 currentRoll = 0;
 currentX = 4;
 currentY = 1;
+
+maxLife = game_get_speed(gamespeed_fps) * 1.5;
+life = maxLife;

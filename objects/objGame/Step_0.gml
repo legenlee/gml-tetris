@@ -14,9 +14,23 @@ switch (screen) {
 	}
 	
 	case ScreenState.Game: {
-		if (!scrPlaceTetrimino(currentX + horizontalKeyPressed, currentY, currentTetrimino, currentRoll)) {
+		if (currentY == scrGetHardDropY()) {
+			if (life > 0) {
+				life -= 1;
+			} else {
+				scrDropTetrimino();
+			}
+		}
+		
+		if (!scrPlaceTetrimino(currentX + horizontalKeyPressed, currentY)) {
 			currentX += horizontalKeyPressed;
 		}
+		
+		if (hardDropKeyPressed) {
+			scrDropTetrimino();
+		}
+		
+		break;
 	}
 	
 	case ScreenState.GameOver: {
@@ -26,5 +40,7 @@ switch (screen) {
 			
 			screen = ScreenState.MainMenu;
 		}
+		
+		break;
 	}
 }
