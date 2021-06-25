@@ -35,6 +35,16 @@ switch (screen) {
 			currentX += horizontalKeyPressed;
 		}
 		
+		if (verticalKeyPressed == 1) {
+			if (scrPlaceTetrimino(currentX, currentY + 1, currentRotate)) {
+				scrDropTetrimino();
+			} else {
+				currentY += 1;
+				dropCooldown = maxDropCooldown;
+			}
+		}
+		
+		
 		if (rotateLeftKeyPressed) {
 			scrSRSRotateLeft();
 		}
@@ -43,13 +53,9 @@ switch (screen) {
 			scrSRSRotateRight();
 		}
 		
-		if (verticalKeyPressed == 1) {
-			if (scrPlaceTetrimino(currentX, currentY + 1, currentRotate)) {
-				scrDropTetrimino();
-			} else {
-				currentY += 1;
-				dropCooldown = maxDropCooldown;
-			}
+		
+		if (holdKeyPressed && hold) {
+			scrHoldTetrimino();
 		}
 		
 		if (hardDropKeyPressed) {

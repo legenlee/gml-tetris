@@ -35,7 +35,7 @@ holdKeyPressed = 0;
 g = 1;
 
 hold = true;
-holdTetrimino = noone;
+holdingTetrimino = noone;
 
 currentTetrimino = noone;
 currentRotate = 0;

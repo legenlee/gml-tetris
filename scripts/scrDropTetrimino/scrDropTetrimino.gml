@@ -23,6 +23,7 @@ function scrDropTetrimino() {
 	currentRotate = 0;
 	dropCooldown = maxDropCooldown;
 	fallCooldown = game_get_speed(gamespeed_fps) / g;
+	hold = true;
 	
 	if (scrPlaceTetrimino(currentX, currentY, currentRotate)) {
 		screen = ScreenState.GameOver;
