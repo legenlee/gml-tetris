@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "SRS",
+    "path": "folders/Scripts/SRS.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrInitMino",
+  "name": "scrSRSRollRight",
   "tags": [],
   "resourceType": "GMScript",
 }
