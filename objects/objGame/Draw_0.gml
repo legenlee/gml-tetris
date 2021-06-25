@@ -48,6 +48,15 @@ if (screen != ScreenState.MainMenu) {
 			}
 		}
 	}
+	
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(270, 40, "Hold");
+	draw_sprite(sprContainer, 0, 270, 66);
+	
+	if (holdingTetrimino != noone) {
+		draw_sprite(asset_get_index("spr" + holdingTetrimino), 0, 270, 66);
+	}
 }
 
 switch (screen) {
