@@ -15,10 +15,16 @@ function scrDropTetrimino() {
 		ds_grid_set(field, tetriminoX, tetriminoY, currentTetrimino);
 	}
 	
+	scrTetrisLine();
+	
 	currentTetrimino = scrPickTetrimino();
 	currentX = 4;
 	currentY = 1;
 	currentRotate = 0;
 	dropCooldown = maxDropCooldown;
 	fallCooldown = game_get_speed(gamespeed_fps) / g;
+	
+	if (scrPlaceTetrimino(currentX, currentY, currentRotate)) {
+		screen = ScreenState.GameOver;
+	}
 }

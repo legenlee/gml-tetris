@@ -43,6 +43,15 @@ switch (screen) {
 			scrSRSRotateRight();
 		}
 		
+		if (verticalKeyPressed == 1) {
+			if (scrPlaceTetrimino(currentX, currentY + 1, currentRotate)) {
+				scrDropTetrimino();
+			} else {
+				currentY += 1;
+				dropCooldown = maxDropCooldown;
+			}
+		}
+		
 		if (hardDropKeyPressed) {
 			scrDropTetrimino();
 		}
@@ -51,7 +60,7 @@ switch (screen) {
 	}
 	
 	case ScreenState.GameOver: {
-		if (keyboard_check_pressed(vk_enter)) {
+		if (keyboard_check_pressed(vk_anykey)) {
 			ds_grid_destroy(field);
 			ds_queue_destroy(queue);
 			
