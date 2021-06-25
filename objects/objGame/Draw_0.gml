@@ -41,7 +41,7 @@ if (screen != ScreenState.MainMenu) {
 			
 			draw_rectangle_color(drawX, drawY, drawX + tetriminoWidth - 1, drawY + tetriminoHeight - 1, BLACK, BLACK, BLACK, BLACK, true);
 			
-			// 공간에 테트리미노 있으면
+			// 공간에 테트리미노 있으면 표시
 			if (item != 0) {
 				var tetriminoItem = variable_struct_get(tetrimino, item);
 				draw_sprite_ext(tetriminoSprite, 0, drawX, drawY, 1, 1, 0, tetriminoItem.tintColor, 1);
@@ -49,6 +49,18 @@ if (screen != ScreenState.MainMenu) {
 		}
 	}
 	
+	/// 테트리미노 큐
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(220, 40, "Next");
+	draw_sprite(sprContainer, 0, 220, 66);
+	
+	for (var i = 0; i < DISPLAY_MAX_QUEUE; i += 1) {
+		draw_sprite(asset_get_index("spr" + ds_list_find_value(tetriminoQueue, i)), 0, 220, 66 + i * 32);
+	}
+	
+	
+	/// 홀딩 테트리미노
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	draw_text(270, 40, "Hold");

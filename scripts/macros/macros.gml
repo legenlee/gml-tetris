@@ -10,3 +10,5 @@
 #macro ORANGE	$007fff
 #macro GRAY		$7f7f7f
 #macro BLACK	$000000
+
+#macro DISPLAY_MAX_QUEUE	5

@@ -10,7 +10,6 @@ enum ScreenState {
 
 screen = ScreenState.MainMenu;
 
-queue = noone;
 field = noone;
 
 margin = 2;
@@ -18,6 +17,8 @@ margin = 2;
 tetriminoSprite = sprTetrimino;
 tetriminoWidth = sprite_get_width(tetriminoSprite);
 tetriminoHeight = sprite_get_height(tetriminoSprite);
+tetriminoQueue = noone;
+tetriminoBag = noone;
 
 scrInitTetrimino();
 scrInitSRSTable();
